@@ -12,16 +12,15 @@ These builds are based on original [Subversion source from github](https://githu
 - Window Kit 10.0.16299.0
 
 **Build Dependencies**  
- ``All deps are buils from src in the same context``
+ ``All dependencies, excluding java, are built from sources in the same context``
 
  - apr 1.6.3
  - apr-util 1.6.1
  - apr_memcache 1.6.1
  - brotli 1.0.3
  - expat 2.2.5
- - httpd 2.4.33
- - java-sdk 1.8.0_162
- - mod_dav 2.4.33
+ - httpd & mod_dav 2.4.33
+ - java-sdk 1.8.0_162 (Oracle)
  - openssl 1.1.0h
  - serf 2.0.0
  - sqlite 3.22.0
