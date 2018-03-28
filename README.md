@@ -1,4 +1,5 @@
-# Apache Subversion Windows builds with httpd modules and java hl#
+# Apache Subversion Windows builds #
+## with httpd mod_X_svn and JavaHL ##
 
 ----
 These builds are based on original [Subversion source from github](https://github.com/apache/subversion).
