@@ -7,7 +7,7 @@ These builds are based on original [Subversion source from github](https://githu
 ----
 **2018-04-11**
 
-- [subversion 1.10.0-rc2 tag](https://github.com/apache/subversion/tree/1.10.0-rc2)
+- [subversion 1.10.0 tag](https://github.com/apache/subversion/tree/1.10.0)
 - MSVC 15.6.5 / 19.13.26129
 - Window Kit 10.0.16299.0
 
@@ -17,13 +17,13 @@ These builds are based on original [Subversion source from github](https://githu
  - apr 1.6.3
  - apr-util 1.6.1
  - apr_memcache 1.6.1
- - brotli 1.0.3
+ - brotli 1.0.4
  - expat 2.2.5
  - httpd & mod_dav 2.4.33
  - java-sdk 1.8.0_162 (Oracle)
  - openssl 1.1.0h
  - serf 2.0.0
- - sqlite 3.22.0
+ - sqlite 3.23.1
  - zlib 1.2.11
  - lz4 1.7.5
  - utf8proc 2.1.0
