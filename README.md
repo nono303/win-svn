@@ -5,10 +5,10 @@
 These builds are based on original [Subversion source from github](https://github.com/apache/subversion).
 
 ----
-**2018-03-28**
+**2018-04-11**
 
-- [subversion 1.10.0-rc1 tag](https://github.com/apache/subversion/tree/1.10.0-rc1)
-- MSVC 15.6.4 / 19.13.26129
+- [subversion 1.10.0-rc2 tag](https://github.com/apache/subversion/tree/1.10.0-rc2)
+- MSVC 15.6.5 / 19.13.26129
 - Window Kit 10.0.16299.0
 
 **Build Dependencies**  
