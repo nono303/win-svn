@@ -5,7 +5,7 @@
 These builds are based on original [Subversion source from github](https://github.com/apache/subversion).
 
 ----
-**2018-10-06**
+**2018-10-07**
 
 - [subversion 1.10.3 tag](https://github.com/apache/subversion/tree/1.10.3)
 - MSVC 15.8.6 / 19.15.26730
@@ -23,8 +23,8 @@ These builds are based on original [Subversion source from github](https://githu
  - java-sdk 1.8.0_181 (Oracle)
  - openssl 1.1.1
  - serf 2.0.0
- - sqlite 3.24.0
- - zlib 1.2.11
+ - sqlite 3.25.2
+ - zlib 1.2.11 ASM build
  - lz4 1.7.5 (bundled)
  - utf8proc 2.1.0 (bundled)
 
