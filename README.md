@@ -5,10 +5,10 @@
 These builds are based on original [Subversion source from github](https://github.com/apache/subversion).
 
 ----
-**2018-10-31**
+**2018-11-14**
 
 - [subversion 1.11.0 tag](https://github.com/apache/subversion/tree/1.11.0)
-- MSVC 15.8.8 / 19.15.26732.1
+- MSVC 15.9.0 / 19.16.27023.1
 - Window Kit 10.0.17134.0
 
 **Build Dependencies**  
@@ -23,14 +23,14 @@ These builds are based on original [Subversion source from github](https://githu
  - java-sdk 1.8.0_181 (Oracle)
  - openssl 1.1.1
  - serf 1.4.0
- - sqlite 3.25.2
+ - sqlite 3.25.3
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 (bundled)
  - utf8proc 2.1.0 (bundled)
 
 **Run Dependencies**
 
-- MSVC15 redist 14.15.26706 [x86](https://aka.ms/vs/15/release/VC_redist.x86.exe) - [x64](https://aka.ms/vs/15/release/VC_redist.x64.exe)
+- MSVC15 redist 14.16.27012 [x86](https://aka.ms/vs/15/release/VC_redist.x86.exe) - [x64](https://aka.ms/vs/15/release/VC_redist.x64.exe)
 - /deps with dll and pdb for:
   - openssl
   - brotli
