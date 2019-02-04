@@ -3,7 +3,7 @@
 These builds are based on original [Subversion source from github](https://github.com/apache/subversion).
 
 ----
-**2019-02-02**
+**2019-02-04**
 
 **compiled with:**  
 - [subversion 1.11.1 tag](https://github.com/apache/subversion/tree/1.11.1)
@@ -12,7 +12,10 @@ These builds are based on original [Subversion source from github](https://githu
   - MSVC redist 14.16.27024 [x86](https://aka.ms/vs/15/release/VC_redist.x86.exe) - [x64](https://aka.ms/vs/15/release/VC_redist.x64.exe)
 - Window Kit 10.0.17763.0
 ----
-**apr_crypto_openssl-1.dll patched** according to [openssl issue 2865](https://github.com/openssl/openssl/issues/2865) & thanks to @Jan-E - *see [#3](https://github.com/nono303/win-svn/issues/3#issuecomment-459882588)*
+**apr_crypto_openssl-1.dll patched** - *see [#3](https://github.com/nono303/win-svn/issues/3#issuecomment-459882588)* - thanks @Jan-E  
+- https://bz.apache.org/bugzilla/show_bug.cgi?id=63139
+- https://github.com/openssl/openssl/issues/2865
+- https://github.com/apache/apr-util/pull/8
 ```
 --- crypto/apr_crypto_openssl.c.orig	2017-10-08 13:32:30.000000000 +0200
 +++ crypto/apr_crypto_openssl.c	2019-02-01 23:04:13.083613500 +0100
@@ -29,7 +32,7 @@ These builds are based on original [Subversion source from github](https://githu
      (void)CRYPTO_malloc_init();
  #else
 +    /* SSL_library_init() must be called prior to any other OpenSSL action. */
-+    SSL_library_init();
++    OPENSSL_init_ssl(0, NULL);
      OPENSSL_malloc_init();
  #endif
      ERR_load_crypto_strings();
