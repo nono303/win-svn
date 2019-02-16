@@ -51,3 +51,28 @@ PASS:  crypto-test 2: password checktext generation/validation
   - apriconv
   - apr
   - expat
+
+## Install On Apahce httpd
+
+1. add win-svn/vc15/(x64|x86) to *PATH* environment variable
+2. copy *mod_dav_svn.so*, *mod_authz_svn.so*, **and all *.dll* files under */deps*** to Apache httpd *modules/* folder
+3. load the modules by adding following lines in apache config
+
+    ```
+    LoadModule dav_svn_module modules/mod_dav_svn.so
+    LoadModule authz_svn_module modules/mod_authz_svn.so
+    ```
+4.  add svn directives to  apache config. If using [mod_authn_ntlm](https://github.com/TQsoft-GmbH/mod_authn_ntlm) for authentication, the directives will look like
+
+    ```
+    <Location /svn>
+        NTLMAuth on
+        NTLMUsernameCase  lower
+        NTLMOfferBasic On
+        DAV svn
+        SVNPath "c:\svn_repo"
+        SVNReposName "My Subversion Repository"
+        AuthzSVNAccessFile "c:\svn_repo\conf\authz"
+        Require valid-user
+    </Location>
+    ```
