@@ -62,7 +62,7 @@
 #### [@f-w](https://github.com/f-w]) method
 *need copy for upgrade, httpd integrated*
 1. Add `win-svn/vc15/(x64|x86)` to *PATH* environment variable.
-2. Copy *mod_dav_svn.so*, *mod_authz_svn.so*, **and all *.dll* files under */deps*** to Apache httpd *modules/* folder
+2. Copy `.so` and **all `.dll` files under `win-svn/vc15/(x64|x86)/deps`** to `/httpd/modules` folder
 3. Load the modules needed by adding following lines, in httpd config:
 
     ```
