@@ -14,12 +14,12 @@
 **Build Dependencies**  
 *All dependencies, excluding java, are built from sources in the same context*
  - [openssl 1.1.1b](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1b) - __crypto header [patched](https://github.com/openssl/openssl/commit/ef45aa14c5af024fcb8bef1c9007f3d1c115bd85) for [#2865](https://github.com/openssl/openssl/issues/2865)__
-  - see [#3](https://github.com/nono303/win-svn/issues/3#issuecomment-462668858) - thanks @Jan-E. Refs: 
-    - https://github.com/openssl/openssl/commit/ef45aa14c5af024fcb8bef1c9007f3d1c115bd85
-    - https://github.com/openssl/openssl/issues/2865
-    - https://bz.apache.org/bugzilla/show_bug.cgi?id=63139
-    - https://github.com/apache/apr-util/pull/8
-  - verify patch executing `crypto-test.exe` result must be:
+   - see [#3](https://github.com/nono303/win-svn/issues/3#issuecomment-462668858) - thanks @Jan-E. Refs: 
+      - https://github.com/openssl/openssl/commit/ef45aa14c5af024fcb8bef1c9007f3d1c115bd85
+      - https://github.com/openssl/openssl/issues/2865
+      - https://bz.apache.org/bugzilla/show_bug.cgi?id=63139
+      - https://github.com/apache/apr-util/pull/8
+    - verify patch executing `crypto-test.exe` result must be:
       ```
       PASS:  crypto-test 1: basic password encryption/decryption test
       PASS:  crypto-test 2: password checktext generation/validation
