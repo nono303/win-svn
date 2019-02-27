@@ -48,11 +48,11 @@
   - apr
   - expat
 
-## Install On Apache httpd  
+## Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
-*easier to upgrade & independant of httpd*  
-1. Add `/win-svn/vc15/(x64|x86)` and `/win-svn/vc15/(x64|x86)/deps` to *PATH* environment variable, after your `/httpd/bin` entry
-2. Load the modules you need by adding following lines in httpd config with **absolute path**
+*easier to upgrade & httpd independant*  
+1. Add `/win-svn/vc15/(x64|x86)` and `/win-svn/vc15/(x64|x86)/deps` to *PATH* environment variable, after your `/httpd/bin` entry.
+2. Load the modules needed by adding following lines, in httpd config, with **absolute path**:
 
     ```
     LoadModule dav_svn_module "C:/.../win-svn/vc15/(x64|x86)/mod_dav_svn.so"
@@ -61,9 +61,9 @@
 
 #### [@f-w](https://github.com/f-w]) method
 *need copy for upgrade, httpd integrated*
-1. add `win-svn/vc15/(x64|x86)` to *PATH* environment variable
-2. copy *mod_dav_svn.so*, *mod_authz_svn.so*, **and all *.dll* files under */deps*** to Apache httpd *modules/* folder
-3. Load the modules by adding following lines in httpd config
+1. Add `win-svn/vc15/(x64|x86)` to *PATH* environment variable.
+2. Copy *mod_dav_svn.so*, *mod_authz_svn.so*, **and all *.dll* files under */deps*** to Apache httpd *modules/* folder
+3. Load the modules needed by adding following lines, in httpd config:
 
     ```
     LoadModule dav_svn_module modules/mod_dav_svn.so
@@ -72,7 +72,8 @@
 
 ----
 #### Finally 
-add svn directives to  apache config. If using [mod_authn_ntlm](https://github.com/TQsoft-GmbH/mod_authn_ntlm) for authentication, the directives will look like
+Add svn directives to httpd config. 
+If using [mod_authn_ntlm](https://github.com/TQsoft-GmbH/mod_authn_ntlm) for authentication, the directives will look like:
 
     ```
     <Location /svn>
