@@ -1,14 +1,13 @@
 # Apache Subversion - Windows MSVC binaries #
 ### including Apache httpd mod_X_svn and JavaHL Native Library Adapter   
  - https://github.com/apache/subversion.
-
 ----
-2019-02-27
-> version [1.11.1](https://github.com/apache/subversion/tree/1.11.1)
+2019-04-17
+> **version [1.12.0](https://github.com/apache/subversion/tree/1.12.0)**
 
-- MSVC 15.9.7 / 19.16.27027.1
-  - MSVC redist 14.16.27024.1 [x86](https://aka.ms/vs/15/release/VC_redist.x86.exe) - [x64](https://aka.ms/vs/15/release/VC_redist.x64.exe)
-- Window Kit 10.0.17763.0
+- MSVC 16.1.0 preview 1.0 / 14.20.27508.1
+ - MSVC redist 14.20.27508 [x86](https://download.visualstudio.microsoft.com/download/pr/092cda8f-872f-47fd-b549-54bbb8a81877/ddc5ec3f90091ca690a67d0d697f1242/vc_redist.x86.exe) - [x64](https://download.visualstudio.microsoft.com/download/pr/21614507-28c5-47e3-973f-85e7f66545a4/f3a2caa13afd59dd0e57ea374dbe8855/vc_redist.x64.exe)
+- Window Kit 10.0.18362.0
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
 
 **Build Dependencies**  
@@ -24,13 +23,13 @@
       PASS:  crypto-test 1: basic password encryption/decryption test
       PASS:  crypto-test 2: password checktext generation/validation
       ```
- - apr 1.6.5
+ - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
  - brotli 1.0.7
  - expat 2.2.6
- - httpd & mod_dav 2.4.38
- - serf 1.4.0
+ - httpd & mod_dav 2.4.39
+ - serf 2.0.0
  - sqlite 3.27.1
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 *(bundled)*
