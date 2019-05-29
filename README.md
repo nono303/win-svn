@@ -26,15 +26,14 @@
  - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
- - brotli 1.0.7
  - expat 2.2.6
  - httpd & mod_dav 2.4.39
  - serf 2.0.0
- - sqlite 3.27.1
+ - sqlite 3.28.0
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - java-sdk 1.8.0_201 *(Oracle)*
+ - java-sdk 1.8.0_211 *(Oracle)*
 
 **Exec Dependencies**
 
@@ -86,3 +85,52 @@ If using [mod_authn_ntlm](https://github.com/TQsoft-GmbH/mod_authn_ntlm) for aut
         Require valid-user
     </Location>
     ```
+
+## mod_dotndothat config
+	mod_dontdothat is an Apache module that allows you to block specific types
+	of Subversion requests.  Specifically, it's designed to keep users from doing
+	things that are particularly hard on the server, like checking out the root
+	of the tree, or the tags or branches directories.  It works by sticking an
+	input filter in front of all REPORT requests and looking for dangerous types
+	of requests.  If it finds any, it returns a 403 Forbidden error.
+
+	It is enabled via single httpd.conf directive, DontDoThatConfigFile:
+```xml
+<Location /svn>
+	DAV svn
+	SVNParentPath /path/to/repositories
+	DontDoThatConfigFile /path/to/config.file
+	DontDoThatDisallowReplay off
+</Location>
+```
+	The file you give to DontDoThatConfigFile is a Subversion configuration file
+	that contains the following sections.
+
+```ini
+[recursive-actions]
+/*/trunk = allow
+/ = deny
+/* = deny
+/*/tags = deny
+/*/branches = deny
+/*/* = deny
+/*/*/tags = deny
+/*/*/branches = deny
+```
+	As you might guess, this defines a set of patterns that control what the
+	user is not allowed to do.  Anything with a 'deny' after it is denied, and
+	as a fallback mechanism anything with an 'allow' after it is special cased
+	to be allowed, even if it matches something that is denied.
+
+	Note that the wildcard portions of a rule only swallow a single directory,
+	so /* will match /foo, but not /foo/bar.  They also must be at the end of
+	a directory segment, so /foo* or /* are valid, but /*foo is not.
+
+	These rules are applied to any recursive action, which basically means any
+	Subversion command that goes through the update-report, like update, diff,
+	checkout, merge, etc.
+
+	The DontDoThatDisallowReplay option makes mod_dontdothat disallow
+	replay requests, which is on by default.
+
+	For packaging you might take a look at https://gist.github.com/JBlond/454a34095ed4c46aac24b3ce7e211ab3
