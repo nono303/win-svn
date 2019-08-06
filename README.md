@@ -1,35 +1,29 @@
 # Apache Subversion - Windows MSVC binaries #
 ### including Apache httpd mod_X_svn and JavaHL Native Library Adapter   
- - https://github.com/apache/subversion.
-----
-2019-04-17
-> **version [1.12.0](https://github.com/apache/subversion/tree/1.12.0)**
+ - https://github.com/apache/subversion
 
-- MSVC 16.1.0 preview 1.0 / 14.20.27508.1
- - MSVC redist 14.20.27508 [x86](https://download.visualstudio.microsoft.com/download/pr/092cda8f-872f-47fd-b549-54bbb8a81877/ddc5ec3f90091ca690a67d0d697f1242/vc_redist.x86.exe) - [x64](https://download.visualstudio.microsoft.com/download/pr/21614507-28c5-47e3-973f-85e7f66545a4/f3a2caa13afd59dd0e57ea374dbe8855/vc_redist.x64.exe)
-- Window Kit 10.0.18362.0
+----
+## Version [1.12.2](https://github.com/apache/subversion/tree/1.12.2)**
+> 
+> 2019-08-06
+- Visual Studio 2019 v16.2
+- VS16 : toolset 14.22.27905
+- VC15 : toolset 14.16.27023
+- Window Kit 10.0.18362.0  
+----
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
+- MSVC redist [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
 **Build Dependencies**  
-*All dependencies, excluding java, are built from sources in the same context*
- - [openssl 1.1.1b](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1b) - __crypto header [patched](https://github.com/openssl/openssl/commit/ef45aa14c5af024fcb8bef1c9007f3d1c115bd85) for [#2865](https://github.com/openssl/openssl/issues/2865)__
-   - see [#3](https://github.com/nono303/win-svn/issues/3#issuecomment-462668858) - thanks @Jan-E. Refs: 
-      - https://github.com/openssl/openssl/commit/ef45aa14c5af024fcb8bef1c9007f3d1c115bd85
-      - https://github.com/openssl/openssl/issues/2865
-      - https://bz.apache.org/bugzilla/show_bug.cgi?id=63139
-      - https://github.com/apache/apr-util/pull/8
-    - verify patch executing `crypto-test.exe` result must be:
-      ```
-      PASS:  crypto-test 1: basic password encryption/decryption test
-      PASS:  crypto-test 2: password checktext generation/validation
-      ```
+*All dependencies are built from sources in the same context*
+ - [openssl 1.1.1c](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1c) - __crypto header [patched](https://github.com/openssl/openssl/commit/ef45aa14c5af024fcb8bef1c9007f3d1c115bd85) for 
  - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
- - expat 2.2.6
- - httpd & mod_dav 2.4.39
+ - expat 2.2.7
+ - httpd & mod_dav 2.4.40
  - serf 2.0.0
- - sqlite 3.28.0
+ - sqlite 3.29.0
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
