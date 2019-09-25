@@ -3,25 +3,25 @@
  - https://github.com/apache/subversion
 
 ----
-## Version [1.12.2](https://github.com/apache/subversion/tree/1.12.2)**
+## Version [1.12.2](https://github.com/apache/subversion/tree/1.12.2)
 > 
-> 2019-08-06
-- Visual Studio 2019 v16.2
-- VS16 : toolset 14.22.27905
+> 2019-09-25
+- Visual Studio 2019 v16.3.0
+- VS16 : toolset 14.23.28105
 - VC15 : toolset 14.16.27023
 - Window Kit 10.0.18362.0  
 ----
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
-- MSVC redist [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+- MSVC redist 14.23.27820 [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
- - [openssl 1.1.1c](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1c) - __crypto header [patched](https://github.com/openssl/openssl/commit/ef45aa14c5af024fcb8bef1c9007f3d1c115bd85) for 
+ - [openssl 1.1.1d](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1d)
  - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
- - expat 2.2.7
- - httpd & mod_dav 2.4.40
+ - expat 2.2.8
+ - httpd & mod_dav 2.4.41
  - serf 2.0.0
  - sqlite 3.29.0
  - zlib 1.2.11 ASM build
