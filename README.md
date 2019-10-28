@@ -3,10 +3,10 @@
  - https://github.com/apache/subversion
 
 ----
-## Version [1.12.2](https://github.com/apache/subversion/tree/1.12.2)
+## Version [1.13.0](https://github.com/apache/subversion/tree/1.13.0)
 > 
-> 2019-09-25
-- Visual Studio 2019 v16.3.0
+> 2019-10-28
+- Visual Studio 2019 v16.3.6
 - VS16 : toolset 14.23.28105
 - VC15 : toolset 14.16.27023
 - Window Kit 10.0.18362.0  
@@ -20,14 +20,14 @@
  - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
- - expat 2.2.8
+ - expat 2.2.9
  - httpd & mod_dav 2.4.41
  - serf 2.0.0
- - sqlite 3.29.0
+ - sqlite 3.30.1
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - java-sdk 1.8.0_211 *(Oracle)*
+ - java-sdk 1.8.0_231 *(Oracle)*
 
 **Exec Dependencies**
 
