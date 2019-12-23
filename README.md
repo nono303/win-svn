@@ -1,26 +1,25 @@
 # Apache Subversion - Windows MSVC binaries #
-### including Apache httpd mod_X_svn and JavaHL Native Library Adapter   
+### including Apache httpd `mod_X_svn` and `JavaHL Native Library` Adapter   
  - https://github.com/apache/subversion
 
 ----
 ## Version [1.13.0](https://github.com/apache/subversion/tree/1.13.0)
-> 
-> 2019-10-28
-- Visual Studio 2019 v16.3.6
-- VS16 : toolset 14.23.28105
+> 2019-12-20
+- Visual Studio 2019 v16.4.2
+- VS16 : toolset 14.24.28314
 - VC15 : toolset 14.16.27023
-- Window Kit 10.0.18362.0  
+- Window Kit 10.1.18362.1
 ----
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
-- MSVC redist 14.23.27820 [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+- MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
- - [openssl 1.1.1d](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1d)
+ - openssl 1.1.1d
  - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
- - expat 2.2.9
+ - libexpat 2.2.9
  - httpd & mod_dav 2.4.41
  - serf 2.0.0
  - sqlite 3.30.1
@@ -38,7 +37,7 @@
   - aprutil
   - apriconv
   - apr
-  - expat
+  - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning lib naming
 
 ## Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
@@ -87,7 +86,7 @@ If using [mod_authn_ntlm](https://github.com/TQsoft-GmbH/mod_authn_ntlm) for aut
 	of the tree, or the tags or branches directories.  It works by sticking an
 	input filter in front of all REPORT requests and looking for dangerous types
 	of requests.  If it finds any, it returns a 403 Forbidden error.
-
+	
 	It is enabled via single httpd.conf directive, DontDoThatConfigFile:
 ```xml
 <Location /svn>
@@ -115,16 +114,16 @@ If using [mod_authn_ntlm](https://github.com/TQsoft-GmbH/mod_authn_ntlm) for aut
 	user is not allowed to do.  Anything with a 'deny' after it is denied, and
 	as a fallback mechanism anything with an 'allow' after it is special cased
 	to be allowed, even if it matches something that is denied.
-
+	
 	Note that the wildcard portions of a rule only swallow a single directory,
 	so /* will match /foo, but not /foo/bar.  They also must be at the end of
 	a directory segment, so /foo* or /* are valid, but /*foo is not.
-
+	
 	These rules are applied to any recursive action, which basically means any
 	Subversion command that goes through the update-report, like update, diff,
 	checkout, merge, etc.
-
+	
 	The DontDoThatDisallowReplay option makes mod_dontdothat disallow
 	replay requests, which is on by default.
-
+	
 	For packaging you might take a look at https://gist.github.com/JBlond/454a34095ed4c46aac24b3ce7e211ab3
