@@ -9,10 +9,9 @@
 - VS16 : toolset 14.24.28314
 - VC15 : toolset 14.16.27023
 - Window Kit 10.1.18362.1
-----
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
 - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
-
+----
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
  - openssl 1.1.1d
@@ -38,6 +37,8 @@
   - apriconv
   - apr
   - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning lib naming
+
+**Build Scripts** can be found [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
 
 ## Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
