@@ -1,44 +1,48 @@
 # Apache Subversion - Windows MSVC binaries #
-### including Apache httpd `mod_X_svn` and `JavaHL Native Library` Adapter   
+### Including Apache httpd `mod_X_svn` and `JavaHL Native Library` Adapter   
  - https://github.com/apache/subversion
 
 ----
-## Version [1.13.0](https://github.com/apache/subversion/tree/1.13.0)
-> 2019-12-20
-- Visual Studio 2019 v16.4.2
-- VS16 : toolset 14.24.28314
-- VC15 : toolset 14.16.27023
-- Window Kit 10.1.18362.1
+## Version [1.14.0](https://github.com/apache/subversion/tree/1.14.0)
+> 2020-05-24
+- VS16 : toolset 14.26.28720
+- VC15 : toolset 14.16.27012
+  - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+- Window Kit 10.0.19041.0
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
-- MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 ----
+**Build Scripts** 
+
+- [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
+- cflags change: `/O2 /GL /MD /Zi`
+
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
- - openssl 1.1.1d
+
+ - openssl 1.1.1g
  - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
  - libexpat 2.2.9
- - httpd & mod_dav 2.4.41
+ - httpd & mod_dav 2.4.43
  - serf 2.0.0
- - sqlite 3.30.1
+ - sqlite 3.31.1
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - java-sdk 1.8.0_231 *(Oracle)*
+ - java-sdk 1.8.0_251 *(Oracle)*
 
 **Exec Dependencies**
 
 - `/deps` with dll and pdb for:
   - openssl
+  - zlib
   - brotli
   - serf
   - aprutil
   - apriconv
   - apr
   - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning lib naming
-
-**Build Scripts** can be found [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
 
 ## Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
