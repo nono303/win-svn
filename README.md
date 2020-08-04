@@ -4,8 +4,8 @@
 
 ----
 ## Version [1.14.0](https://github.com/apache/subversion/tree/1.14.0)
-> 2020-05-24
-- VS16 : toolset 14.26.28720
+> 2020-08-04
+- VS16 : toolset 14.26.28808
 - VC15 : toolset 14.16.27012
   - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 - Window Kit 10.0.19041.0
@@ -14,7 +14,8 @@
 **Build Scripts** 
 
 - [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
-- cflags change: `/O2 /GL /MD /Zi`
+- cflags: `/O2 /GL /MD /Zi`
+- ldflags: `/LTCG /OPT:ICF`
 
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
@@ -24,13 +25,13 @@
  - apr-util 1.6.1
  - apr_memcache 1.6.1
  - libexpat 2.2.9
- - httpd & mod_dav 2.4.43
+ - httpd & mod_dav 2.4.46
  - serf 2.0.0
- - sqlite 3.31.1
+ - sqlite 3.32.3
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - java-sdk 1.8.0_251 *(Oracle)*
+ - OpenJDK 14.0.2
 
 **Exec Dependencies**
 
