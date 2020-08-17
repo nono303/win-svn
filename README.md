@@ -4,8 +4,8 @@
 
 ----
 ## Version [1.14.0](https://github.com/apache/subversion/tree/1.14.0)
-> 2020-08-04
-- VS16 : toolset 14.26.28808
+> 2020-08-17
+- VS16 : toolset 14.27.29016
 - VC15 : toolset 14.16.27012
   - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 - Window Kit 10.0.19041.0
@@ -43,6 +43,7 @@
   - aprutil
   - apriconv
   - apr
+  - libhttpd (*for `mod_authz_svn.so` if `/httpd/bin/`  is not in Windows PATH - see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-674782866)*)
   - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning lib naming
 
 ## Install on Apache httpd  
