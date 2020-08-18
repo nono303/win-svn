@@ -33,7 +33,18 @@
  - utf8proc 2.1.0 *(bundled)*
  - OpenJDK 14.0.2
 
-**Exec Dependencies**
+**Runtime Dependencies**
+
+> Depending to your runtime environment, all dependencies might **NOT** be used to run subversion!
+>
+> Provided files allow you to run subversion <u>autonomously</u>. 
+> But in the case of an httpd module usage, most of these dependencies may already be present in the /httpd/bin folder.
+>
+> So, depending on your httpd distribution / version and how you manage your PATH environment var (with or without /httpd/bin in) you might test, in case of trouble, with a [Dependency Walker](https://github.com/lucasg/Dependencies) which dll are required in your particular context.
+>
+> Also not that /httpd/bin dependencies are not built in the same way between distributions ([Apache Lounge](https://www.apachelounge.com/), [Apache Haus](https://www.apachehaus.com/), [WampServer](https://www.wampserver.com/), [XAMPP](http://www.apachefriends.org/en/xampp.html), [BitNami WAMP](http://bitnami.com/stack/wamp)) and mine (and moreover may not be in the same version...)
+>
+> I don't have an absolute and good answer on how manage this but in case of conflict, my advice would be to **NOT** use PATH environment and [hardlink](https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions) needed dll in /deps to your subversion root folder
 
 - `/deps` with dll and pdb for:
   - openssl
@@ -41,10 +52,10 @@
   - brotli
   - serf
   - aprutil
+    - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) *see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning lib naming*
   - apriconv
   - apr
-  - libhttpd (*for `mod_authz_svn.so` if `/httpd/bin/`  is not in Windows PATH - see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-674782866)*)
-  - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning lib naming
+  - libhttpd ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) *see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-674782866) concerning usage with `mod_authz_svn.so`*
 
 ## Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
