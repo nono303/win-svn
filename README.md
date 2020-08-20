@@ -42,28 +42,41 @@
 >
 > So, depending on your httpd distribution / version and how you manage your PATH environment var (with or without /httpd/bin in) you might test, in case of trouble, with a [Dependency Walker](https://github.com/lucasg/Dependencies) which dll are required in your particular context.
 >
-> Also not that /httpd/bin dependencies are not built in the same way between distributions ([Apache Lounge](https://www.apachelounge.com/), [Apache Haus](https://www.apachehaus.com/), [WampServer](https://www.wampserver.com/), [XAMPP](http://www.apachefriends.org/en/xampp.html), [BitNami WAMP](http://bitnami.com/stack/wamp)) and mine (and moreover may not be in the same version...)
+> Also not that /httpd/bin dependencies are not built in the same way between standard distributions ([Apache Lounge](https://www.apachelounge.com/), [Apache Haus](https://www.apachehaus.com/), [WampServer](https://www.wampserver.com/), [XAMPP](http://www.apachefriends.org/en/xampp.html), [BitNami WAMP](http://bitnami.com/stack/wamp)) and mine (and moreover may not be in the same version...)
 >
 > I don't have an absolute and good answer on how manage this but in case of conflict, my advice would be to **NOT** use PATH environment and [hardlink](https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions) needed dll in /deps to your subversion root folder
 
 - `/deps` with dll and pdb for:
+  - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) 
+    - *mandatory for svn as module in httpd standard distributions*, see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-677525851)
+    - *see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610)  if you already have `expat.dll`*
   - openssl
   - zlib
   - brotli
   - serf
   - aprutil
-    - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) *see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning lib naming*
   - apriconv
   - apr
-  - libhttpd ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) *see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-674782866) concerning usage with `mod_authz_svn.so`*
 
 ## Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
-*easier to upgrade & httpd independant*  
-1. Add `/win-svn/vc15/(x64|x86)` and `/win-svn/vc15/(x64|x86)/deps` to *PATH* environment variable, after your `/httpd/bin` entry.
+*easier to upgrade & httpd independent*
+
+1. 
+
+    - Add your  `/deps` directory name to Windows *PATH* environment variable, after your `/httpd/bin` entry, if setted 
+
+        **OR** 
+
+    - just hardlink from`/deps` to `/` dll that are NOT present in your `/httpd/bin` folder (to avoid duplicate and/or version conflicts) 
+
+        - ex. `mklink /h C:\XXX\win-svn\vs16\x64-avx\libexpat.dll C:\XXX\win-svn\vs16\x64-avx\deps\libexpat.dll`
+
 2. Load the modules needed by adding following lines, in httpd config, with **absolute path**:
 
     ```
+    LoadModule dav_module modules/mod_dav.so # included in httpd distribution
+    ...
     LoadModule dav_svn_module "C:/.../win-svn/vc15/(x64|x86)/mod_dav_svn.so"
     LoadModule authz_svn_module "C:/.../win-svn/vc15/(x64|x86)/mod_authz_svn.so"
     ```
@@ -75,6 +88,8 @@
 3. Load the modules needed by adding following lines, in httpd config:
 
     ```
+    LoadModule dav_module modules/mod_dav.so # included in httpd distribution
+    ...
     LoadModule dav_svn_module modules/mod_dav_svn.so
     LoadModule authz_svn_module modules/mod_authz_svn.so
     ```
