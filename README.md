@@ -3,16 +3,17 @@
  - https://github.com/apache/subversion
 
 ----
-## Version [1.14.0](https://github.com/apache/subversion/tree/1.14.0)
-> 2020-08-17
-- VS16 : toolset 14.27.29016
-- VC15 : toolset 14.16.27012
+## `VC15 & VS16`
+
+- VS16 : toolset 14.28.29333
+- VC15 : toolset 14.16.27023
   - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 - Window Kit 10.0.19041.0
-- **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
-----
-**Build Scripts** 
+- **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory
 
+## Version [1.14.1](https://github.com/apache/subversion/tree/1.14.1)
+> 2021-02-05
+- **Build Scripts** 
 - [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
 - cflags: `/O2 /GL /MD /Zi`
 - ldflags: `/LTCG /OPT:ICF`
@@ -20,18 +21,18 @@
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
 
- - openssl 1.1.1g
+ - openssl 1.1.1i
  - apr 1.7.0
  - apr-util 1.6.1
  - apr_memcache 1.6.1
- - libexpat 2.2.9
+ - libexpat 2.2.10
  - httpd & mod_dav 2.4.46
  - serf 2.0.0
- - sqlite 3.32.3
+ - sqlite 3.34.1
  - zlib 1.2.11 ASM build
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - OpenJDK 14.0.2
+ - OpenJDK 15.0.2
 
 **Runtime Dependencies**
 
