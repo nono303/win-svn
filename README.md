@@ -1,38 +1,40 @@
 # Apache Subversion - Windows MSVC binaries #
-### Including Apache httpd `mod_X_svn` and `JavaHL Native Library` Adapter   
+#### Including Apache httpd `mod_X_svn` and `JavaHL Native Library` Adapter   
  - https://github.com/apache/subversion
 
 ----
-## `VC15 & VS16`
-
-- VS16 : toolset 14.28.29333
-- VC15 : toolset 14.16.27023
+### Version [1.14.1](https://github.com/apache/subversion/tree/1.14.1)
+> 2021-02-05 - commit
+>
+> 2021-07-23 - build
+- **VS17**: toolset 14.30.30401
+- **VS16**: toolset 14.29.30132
+- **VC15**: toolset 14.16.27023
   - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
-- Window Kit 10.0.19041.0
-- **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory
+- Window Kit: 10.0.20348.0
+- **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
 
-## Version [1.14.1](https://github.com/apache/subversion/tree/1.14.1)
-> 2021-02-05
-- **Build Scripts** 
+**Build Scripts** 
+
 - [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
 - cflags: `/O2 /GL /MD /Zi`
-- ldflags: `/LTCG /OPT:ICF`
+- ldflags: ` /LTCG /OPT:REF,ICF`
 
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
 
- - openssl 1.1.1i
- - apr 1.7.0
- - apr-util 1.6.1
- - apr_memcache 1.6.1
- - libexpat 2.2.10
- - httpd & mod_dav 2.4.46
- - serf 2.0.0
- - sqlite 3.34.1
- - zlib 1.2.11 ASM build
+ - [openssl 1.1.1k](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1k)
+ - [apr 1.7.0](https://github.com/apache/apr/tree/1.7.0)
+ - [apr-util 1.6.1](https://github.com/apache/apr-util/tree/1.6.1)
+    - *apr_memcache 1.6.1*
+ - [libexpat 2.4.1](https://github.com/libexpat/libexpat/tree/R_2_4_1)
+ - [httpd 2.4.48](https://github.com/apache/httpd/tree/2.4.48)
+ - [serf 1.4.0 *(trunk)*](https://github.com/apache/serf)
+ - [sqlite 3.36.0](https://github.com/sqlite/sqlite/tree/version-3.36.0)
+ - [zlib 1.2.11](https://github.com/madler/zlib/tree/v1.2.11) *ASM build*
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - OpenJDK 15.0.2
+ - [OpenJDK 16.0.2](https://jdk.java.net/16/)
 
 **Runtime Dependencies**
 
@@ -59,7 +61,7 @@
   - apriconv
   - apr
 
-## Install on Apache httpd  
+### Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
 *easier to upgrade & httpd independent*
 
@@ -113,7 +115,7 @@ If using [mod_authn_ntlm](https://github.com/TQsoft-GmbH/mod_authn_ntlm) for aut
     </Location>
     ```
 
-## mod_dotndothat config
+### mod_dotndothat config
 	mod_dontdothat is an Apache module that allows you to block specific types
 	of Subversion requests.  Specifically, it's designed to keep users from doing
 	things that are particularly hard on the server, like checking out the root
