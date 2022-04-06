@@ -3,63 +3,66 @@
  - https://github.com/apache/subversion
 
 ----
-### Version [1.14.1](https://github.com/apache/subversion/tree/1.14.1)
-> 2021-02-05 - commit
+### Version [1.14.2](https://github.com/apache/subversion/tree/1.14.2)
+> 2021-02-03 - commit
 >
-> 2021-07-23 - build
-- **VS17**: toolset 14.30.30401
-- **VS16**: toolset 14.29.30132
+> 2022-04-06 - build
+- **VS17**: toolset 14.32.31302
+- **VS16**: toolset 14.29.30133
 - **VC15**: toolset 14.16.27023
   - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
-- Window Kit: 10.0.20348.0
+- Window Kit: 10.0.22000.0
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
 
 **Build Scripts** 
 
 - [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
-- cflags: `/O2 /GL /MD /Zi`
+- cflags: `/O2 /GL /Zi`
 - ldflags: ` /LTCG /OPT:REF,ICF`
 
 **Build Dependencies**  
 *All dependencies are built from sources in the same context*
 
- - [openssl 1.1.1k](https://github.com/openssl/openssl/tree/OpenSSL_1_1_1k)
- - [apr 1.7.0](https://github.com/apache/apr/tree/1.7.0)
- - [apr-util 1.6.1](https://github.com/apache/apr-util/tree/1.6.1)
-    - *apr_memcache 1.6.1*
- - [libexpat 2.4.1](https://github.com/libexpat/libexpat/tree/R_2_4_1)
- - [httpd 2.4.48](https://github.com/apache/httpd/tree/2.4.48)
- - [serf 1.4.0 *(trunk)*](https://github.com/apache/serf)
- - [sqlite 3.36.0](https://github.com/sqlite/sqlite/tree/version-3.36.0)
- - [zlib 1.2.11](https://github.com/madler/zlib/tree/v1.2.11) *ASM build*
+ - [openssl 3.0.2](https://github.com/openssl/openssl/tree/openssl-3.0.2)
+ - [apr 1.7.1-dev](https://github.com/apache/apr/commit/63c68a4093dd7e6c9336e6ffcd35fc5bd6a5d8f2)
+ - [apr-util 1.7.0-dev](https://github.com/apache/apr-util/commit/16eee54b0955f5e8784b2af9b51d12580b86cb3f)
+    - *apr_memcache 1.7.0-dev*
+ - [libexpat 2.4.8](https://github.com/libexpat/libexpat/tree/R_2_4_8)
+ - [httpd 2.4.53](https://github.com/apache/httpd/tree/2.4.53)
+ - [serf 1.4.0-dev](https://github.com/apache/serf/commit/1cb2ab783fb7182a7d5db64d428be30b6d779a90)
+ - [sqlite 3.38.2](https://github.com/sqlite/sqlite/tree/version-3.38.2)
+ - [zlib 1.2.12](https://github.com/madler/zlib/tree/v1.2.12)
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - [OpenJDK 16.0.2](https://jdk.java.net/16/)
+ - [OpenJDK 18](https://jdk.java.net/18/)
 
 **Runtime Dependencies**
 
 > Depending to your runtime environment, all dependencies might **NOT** be used to run subversion!
 >
-> Provided files allow you to run subversion <u>autonomously</u>. 
+> Provided **dll and pdb in /deps** allow you to run subversion <u>autonomously</u>. 
 > But in the case of an httpd module usage, most of these dependencies may already be present in the /httpd/bin folder.
 >
-> So, depending on your httpd distribution / version and how you manage your PATH environment var (with or without /httpd/bin in) you might test, in case of trouble, with a [Dependency Walker](https://github.com/lucasg/Dependencies) which dll are required in your particular context.
+> So, depending on your httpd distribution, version and how you manage your PATH environment var (with or without /httpd/bin in) you might test, in case of trouble, with a [Dependency Walker](https://github.com/lucasg/Dependencies) which dll are required in your particular context.
 >
 > Also not that /httpd/bin dependencies are not built in the same way between standard distributions ([Apache Lounge](https://www.apachelounge.com/), [Apache Haus](https://www.apachehaus.com/), [WampServer](https://www.wampserver.com/), [XAMPP](http://www.apachefriends.org/en/xampp.html), [BitNami WAMP](http://bitnami.com/stack/wamp)) and mine (and moreover may not be in the same version...)
 >
 > I don't have an absolute and good answer on how manage this but in case of conflict, my advice would be to **NOT** use PATH environment and [hardlink](https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions) needed dll in /deps to your subversion root folder
 
-- `/deps` with dll and pdb for:
-  - libexpat ![https://www.apachelounge.com/viewtopic.php?p=38610#38610](https://placehold.it/15/f03c15/000000?text=+) 
-    - *mandatory for svn as module in httpd standard distributions*, see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-677525851)
-    - *see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610)  if you already have `expat.dll`*
-  - openssl
-  - zlib
-  - brotli
-  - serf
-  - aprutil
-  - apriconv
-  - apr
+- **libexpat** - `libexpat.dll`
+  - :warning: _see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610) concerning naming_
+  - *mandatory for svn as module in httpd standard distributions*, see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-677525851)
+  - *see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610)  if you already have `expat.dll`*
+- **openssl** - `libcrypto-3-x64.dll libssl-3-x64.dll`
+- **zlib **- `zlib.dll`
+  - :warning: _see [this patch](https://github.com/winlibs/zlib/blob/master/winlibs.patch) concerning naming_
+- **brotli** - `brotlicommon.dll brotlidec.dll brotlienc.dll`
+- **serf** - `libserf-2.dll`
+- **aprutil** - `libaprutil-1.dll`
+- **apriconv** - `libapriconv-1.dll`
+- **apr **- `libapr-1.dll`
+
+​	**:exclamation: In any case, DO NOT RENAME FILES!**
 
 ### Install on Apache httpd  
 #### [@nono303](https://github.com/nono303) method  
