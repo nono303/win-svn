@@ -54,13 +54,13 @@
   - *mandatory for svn as module in httpd standard distributions*, see [#6](https://github.com/nono303/win-svn/issues/6#issuecomment-677525851)
   - *see [this topic](https://www.apachelounge.com/viewtopic.php?p=38610#38610)  if you already have `expat.dll`*
 - **openssl** - `libcrypto-3-x64.dll libssl-3-x64.dll`
-- **zlib **- `zlib.dll`
+- **zlib** - `zlib.dll`
   - :warning: _see [this patch](https://github.com/winlibs/zlib/blob/master/winlibs.patch) concerning naming_
 - **brotli** - `brotlicommon.dll brotlidec.dll brotlienc.dll`
 - **serf** - `libserf-2.dll`
 - **aprutil** - `libaprutil-1.dll`
 - **apriconv** - `libapriconv-1.dll`
-- **apr **- `libapr-1.dll`
+- **apr** - `libapr-1.dll`
 
 ​	**:exclamation: In any case, DO NOT RENAME FILES!**
 
