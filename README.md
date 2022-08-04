@@ -10,9 +10,11 @@
 - **VS17**: toolset 14.32.31302
 - **VS16**: toolset 14.29.30133
 - **VC15**: toolset 14.16.27023
-  - MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+- MSVC redist  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 - Window Kit: 10.0.22000.0
 - **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** __for specified directory__
+
+[**How to get the good version**](https://github.com/nono303/PHP-memcache-dll#how-to-get-the-good-version)
 
 **Build Scripts** 
 
