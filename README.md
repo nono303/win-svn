@@ -3,41 +3,37 @@
  - https://github.com/apache/subversion
 
 ----
-### Version [1.14.3](https://github.com/apache/subversion/tree/1.14.3)
-> 2022-12-09 - commit
+### Version [1.14.4](https://github.com/apache/subversion/tree/1.14.4)
+> 2024-10-08 - commit
 >
-> 2022-12-14 - build
-- **VS17** toolset: 14.39.33218
-- **VS16** toolset: 14.29.30133
-- **VC15** toolset: 14.16.27023
-- MSVC redist:  [x86](https://aka.ms/vs/16/release/vc_redist.x86.exe) - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+> 2024-10-09 - build
+- **VS17** toolset: 19.40.33815
+- **VS16** toolset: 19.29.30154
 - Window Kit: 10.0.22621.0
-- **[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx) releases** _in specified directory_
-
-[**How to get the good version**](https://github.com/nono303/PHP-memcache-dll#how-to-get-the-good-version)
-
-**Build Scripts** 
-
 - [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
-- cflags: `/O2 /GL /MD /Zi`
-- ldflags: ` /LTCG /OPT:REF,ICF`
 
-**Build  & Runtime Dependencies**
+**[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx)**, **[AVX2](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx)** or not (**SSE2**): 
+   - Check your cpu supported instructions with [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html)
+     > ![](./avx.png)
+
+#### :warning: VC15 & x86 are now discontinued. Latest release for theses build is [1.14.3](https://github.com/nono303/win-svn/tree/1.14.3)
+
+### Build  & Runtime Dependencies
 
 > * All dependencies are built from sources in the same context
 
- - [openssl 3.1.4](https://github.com/openssl/openssl/tree/openssl-3.1.4) 
+ - [openssl 3.3.2](https://github.com/openssl/openssl/tree/openssl-3.3.2) 
  - [apr 1.8.0-dev](https://github.com/apache/apr)
  - [apr-util 1.7.0-dev](https://github.com/apache/apr-util)
     - *apr_memcache 1.7.0-dev*
- - [libexpat 2.5.0](https://github.com/libexpat/libexpat/tree/R_2_5_0)
- - [httpd 2.4.58](https://github.com/apache/httpd/tree/2.4.58) 
- - [serf 2.0.0-dev](https://github.com/apache/serf/commit/c8b756c192658807a9219e2b58d6234a2691501a)
- - [sqlite 3.44.2](https://github.com/rhuijben/sqlite-amalgamation/tree/3.44.2)
- - [zlib 1.3](https://github.com/madler/zlib/tree/v1.3)
+ - [libexpat 2.6.3](https://github.com/libexpat/libexpat/tree/R_2_6_3)
+ - [httpd 2.4.62](https://github.com/apache/httpd/tree/2.4.62) 
+ - [serf 2.0.0-dev](https://github.com/apache/serf/commit/73f26fab7baca09c5257ac1da725589a639a44de)
+ - [sqlite 3.46.1](https://github.com/rhuijben/sqlite-amalgamation/tree/3.46.1)
+ - [zlib 1.3.1](https://github.com/madler/zlib/tree/v1.3.1)
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - [OpenJDK 21.0.1](https://jdk.java.net/21/)
+ - [OpenJDK 23](https://jdk.java.net/23/)
 
 **Runtime Dependencies**
 
