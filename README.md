@@ -3,37 +3,35 @@
  - https://github.com/apache/subversion
 
 ----
-### Version [1.14.5](https://github.com/apache/subversion/tree/1.14.5)
-> 2024-12-09 - commit
+### Version [1.15.0-rc4](https://github.com/apache/subversion/releases/tag/1.15.0-rc4)
+> 2026-09-03 - commit
 >
-> 2024-12-10 - build
-- **VS17** toolset: 19.42.34432
-- **VS16** toolset: 19.29.30154
+> 2026-09-10 - build
+- **VS18** toolset: 14.51.36231
 - Window Kit: 10.0.26100.0
 - [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
 
-**[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx)**, **[AVX2](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx)** or not (**SSE2**): 
+**[AVX](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx)** or **[AVX2](https://msdn.microsoft.com/fr-fr/library/jj620901.aspx)**
+
    - Check your cpu supported instructions with [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html)
      > ![](./avx.png)
-
-#### :warning: VC15 & x86 are now discontinued. Latest release for theses build is [1.14.3](https://github.com/nono303/win-svn/tree/1.14.3)
 
 ### Build  & Runtime Dependencies
 
 > * All dependencies are built from sources in the same context
 
- - [openssl 3.4.0](https://github.com/openssl/openssl/tree/openssl-3.4.0) 
- - [apr 1.8.0-dev](https://github.com/apache/apr)
- - [apr-util 1.7.0-dev](https://github.com/apache/apr-util)
+ - [openssl 3.6.4](https://github.com/openssl/openssl/tree/openssl-3.6.4) 
+ - [apr 1.7.7-dev](https://github.com/apache/apr/commit/6607b119cb9b5e0504a2dad97dd099a7368cb5a3)
+ - [apr-util 1.7.0-dev](https://github.com/apache/apr-util/commit/7816152159f75b45444eb33432d49f8fd393d54c)
     - *apr_memcache 1.7.0-dev*
- - [libexpat 2.6.4](https://github.com/libexpat/libexpat/tree/R_2_6_4)
- - [httpd 2.4.62](https://github.com/apache/httpd/tree/2.4.62) 
- - [serf 2.0.0-dev](https://github.com/apache/serf/commit/73f26fab7baca09c5257ac1da725589a639a44de)
- - [sqlite 3.47.2](https://github.com/rhuijben/sqlite-amalgamation/tree/3.47.2)
- - [zlib 1.3.1](https://github.com/madler/zlib/tree/v1.3.1)
+ - [libexpat 2.8.4](https://github.com/libexpat/libexpat/tree/R_2_8_4)
+ - [httpd 2.4.68](https://github.com/apache/httpd/tree/2.4.68) 
+ - [serf 2.0.0-dev](https://github.com/apache/serf/commit/1a26bcb2d6e27abc4a996b0c32d661415214a0bf)
+ - [sqlite 3.53.4](https://github.com/rhuijben/sqlite-amalgamation/tree/3.53.4)
+ - [zlib 1.3.2](https://github.com/madler/zlib/tree/v1.3.2)
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - [OpenJDK 23.0.1](https://jdk.java.net/23/) _(to compile JavaHL Native Library)_
+ - [OpenJDK 26.0.2](https://jdk.java.net/26/) _(to compile JavaHL Native Library)_
 
 **Runtime Dependencies**
 
