@@ -3,10 +3,10 @@
  - https://github.com/apache/subversion
 
 ----
-### Version [1.15.0-rc4](https://github.com/apache/subversion/releases/tag/1.15.0-rc4)
-> 2026-09-03 - commit
+### Version [1.15.0](https://github.com/apache/subversion/releases/tag/1.15.0)
+> 2026-09-24 - commit
 >
-> 2026-09-10 - build
+> 2026-10-13 - build
 - **VS18** toolset: 14.51.36231
 - Window Kit: 10.0.26100.0
 - [@nono303/win-build-scripts](https://github.com/nono303/win-build-scripts)
@@ -20,18 +20,18 @@
 
 > * All dependencies are built from sources in the same context
 
- - [openssl 3.6.4](https://github.com/openssl/openssl/tree/openssl-3.6.4) 
- - [apr 1.7.7-dev](https://github.com/apache/apr/commit/6607b119cb9b5e0504a2dad97dd099a7368cb5a3)
- - [apr-util 1.7.0-dev](https://github.com/apache/apr-util/commit/7816152159f75b45444eb33432d49f8fd393d54c)
+ - [openssl 3.6.5](https://github.com/openssl/openssl/tree/openssl-3.6.5) 
+ - [apr 1.7.7-dev](https://github.com/apache/apr/commit/c5db070f0800834ec9cbfef4a44862cdf87ccdf0)
+ - [apr-util 1.7.0-dev](https://github.com/apache/apr-util/commit/667676025017a8d11f5323c91e3e0c9838116515)
     - *apr_memcache 1.7.0-dev*
- - [libexpat 2.8.4](https://github.com/libexpat/libexpat/tree/R_2_8_4)
- - [httpd 2.4.68](https://github.com/apache/httpd/tree/2.4.68) 
+ - [libexpat 2.9.0](https://github.com/libexpat/libexpat/tree/R_2_9_0)
+ - [httpd 2.4.69](https://github.com/apache/httpd/tree/2.4.69) 
  - [serf 2.0.0-dev](https://github.com/apache/serf/commit/1a26bcb2d6e27abc4a996b0c32d661415214a0bf)
- - [sqlite 3.53.4](https://github.com/rhuijben/sqlite-amalgamation/tree/3.53.4)
+ - [sqlite 3.54.0](https://github.com/rhuijben/sqlite-amalgamation/tree/3.54.0)
  - [zlib 1.3.2](https://github.com/madler/zlib/tree/v1.3.2)
  - lz4 1.7.5 *(bundled)*
  - utf8proc 2.1.0 *(bundled)*
- - [OpenJDK 26.0.2](https://jdk.java.net/26/) _(to compile JavaHL Native Library)_
+ - [OpenJDK 27](https://jdk.java.net/27/) _(to compile JavaHL Native Library)_
 
 **Runtime Dependencies**
 
